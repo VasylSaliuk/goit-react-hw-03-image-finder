@@ -1,0 +1,16 @@
+import styles from './ImageGalleryItem.module.css';
+
+const ImageGalleryItem = ({ id, src, alt, largeImageURL, onClick }) => {
+  return (
+    <li key={id} className={styles.ImageGalleryItem}>
+      <img
+        onClick={onClick}
+        src={src}
+        alt={alt}
+        className={styles.ImageGalleryItemImage}
+        data-source={largeImageURL} />
+    </li>
+  );
+};
+
+export default ImageGalleryItem;
