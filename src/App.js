@@ -77,7 +77,6 @@ class App extends Component {
 
   render() {
     const { showModal, images, isLoading, error, largeImage } = this.state;
-    const showLoadMoreButton = images.length > 0 && !isLoading;
 
     return (
       <>
@@ -87,7 +86,7 @@ class App extends Component {
         <ImageGallery images={images} onClick={this.setLargeImage} />
         {isLoading && <Loader />}
 
-        {showLoadMoreButton && <Button onLoadMore={this.getImages} />}
+        {images.length >= 12 && !isLoading && <Button onLoadMore={this.getImages} />}
 
         {showModal && <Modal onClose={this.toggleModal} url={largeImage} />}
 
