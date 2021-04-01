@@ -12,7 +12,7 @@ class ImageGalleryItem extends Component {
   };
 
   handleChange = () => {
-    this.props.onClick(this.state.largeImageURL);
+    this.props.onClick(this.largeImageURL);
   };
 
   render() {
